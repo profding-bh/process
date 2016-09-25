@@ -1,9 +1,11 @@
 CC=gcc
 
-all:exit_example exit_differ wait2 wait_example wait_example2 wait_example3 get_status
+all:exit_example exit_differ wait2 wait_example wait_example2 wait_example3 get_status fork_test
 .PHONY:all clean
 
 
+fork_test:fork_test.c
+	$(CC)  fork_test.c -o fork_test
 exit_example:exit_example.c
 	$(CC)  exit_example.c -o exit_example 
 exit_differ:exit_differ.c
@@ -21,4 +23,4 @@ wait_example3:wait_example3.c
 get_status:get_status.c
 	$(CC)  get_status.c -o get_status
 clean:
-	rm exit_example exit_differ wait2 wait_example wait_example2 wait_example3 get_status
+	rm exit_example exit_differ wait2 wait_example wait_example2 wait_example3 get_status fork_test
